@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AccesoDatos
+namespace Entidades
 {
     public class Class1
     {
