@@ -10,7 +10,7 @@ namespace AccesoDatos
     {
         #region Atributos
 
-        private readonly string CadenaConexion = @"mongodb://localhost:27017";
+        private readonly string CadenaConexion = @"mongodb://localhost:27017/";
         private MongoClient InstanciaBD;
         private IMongoDatabase BaseDatos;
         private const string NombreBD = "BarberiaDB";
