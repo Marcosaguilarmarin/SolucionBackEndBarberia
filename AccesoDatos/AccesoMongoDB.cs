@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace AccesoDatos
 {
-    public class AccesoMongoDB
+    public class AccesoMongoDB : IAccesoMongoDB
     {
         #region Atributos
 
