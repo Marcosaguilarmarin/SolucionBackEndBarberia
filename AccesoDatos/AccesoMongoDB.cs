@@ -63,6 +63,8 @@ namespace AccesoDatos
 
         #region Publicos
 
+        #region Usuarios
+
         /// <summary>
         /// Metodo para agregar usuarios
         /// </summary>
@@ -123,6 +125,73 @@ namespace AccesoDatos
             else
                 return Coleccion.Find(d => true).ToList();
         }
+        #endregion
+
+        #region Appointments
+        /// <summary>
+        /// Metodo para agregar Appointments
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Appointments</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool AgregarAppointments(Appointments P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Appointments>("Appointments");
+            Coleccion.InsertOne(P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para modificar Appointments
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Appointments</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool ModificarAppointments(Appointments P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Appointments>("Appointments");
+            Coleccion.ReplaceOne(d => d.Id == P_Entidad.Id, P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para eliminar Appointments
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Appointments</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool EliminarAppointments(Appointments P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Appointments>("Appointments");
+            Coleccion.DeleteOne(d => d.Id == P_Entidad.Id);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para consultar Appointments de base de datos
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Appointments</param>
+        /// <returns>Entidad lista de tipo Appointments</returns>
+        public List<Appointments> ConsultarAppointments(Appointments P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Appointments>("Appointments");
+            if (P_Entidad != null)
+                if (!string.IsNullOrEmpty(P_Entidad.Id))
+                    return Coleccion.Find(d => d.Id == P_Entidad.Id).ToList();
+                else
+                    return Coleccion.Find(d => true).ToList();
+            else
+                return Coleccion.Find(d => true).ToList();
+        }
+
+
+        #endregion
+
 
         #endregion
 

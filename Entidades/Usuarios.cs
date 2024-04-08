@@ -10,12 +10,16 @@ namespace Entidades
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-        [BsonElement("UserName")]
+        [BsonElement("NombreUsuario")]
         public string NombreUsuario { get; set; }
-        [BsonElement("Pass")]
+        [BsonElement("Clave")]
         public string Clave { get; set; }
-        [BsonElement("State")]
+        [BsonElement("IdLogueo")]
+        public string IdLogueo { get; set; }
+        [BsonElement("Estado")]
         public bool Estado { get; set; }
+
+
         #endregion
 
         #region Constructores
@@ -29,3 +33,4 @@ namespace Entidades
         #endregion
     }
 }
+

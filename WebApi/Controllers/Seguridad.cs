@@ -35,6 +35,8 @@ namespace WebApi.Controllers
             return View();
         }
 
+        #region Usuarios
+
         [HttpPost]
         [Route(nameof(AgregarUsuario))]
         public bool AgregarUsuario(Usuarios P_Entidad)
@@ -63,9 +65,42 @@ namespace WebApi.Controllers
             Usuarios u = new Usuarios();
             return _ilogica.ConsultarUsuarios(u).ToList();
         }
+        #endregion
+
+        #region Appointments
+        [HttpPost]
+        [Route(nameof(AgregarAppointments))]
+        public bool AgregarAppointments(Appointments P_Entidad)
+        {
+            return _ilogica.AgregarAppointments(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(ModificarAppointments))]
+        public bool ModificarAppointments(Appointments P_Entidad)
+        {
+            return _ilogica.ModificarAppointments(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(EliminarAppointments))]
+        public bool EliminarAppointments(Appointments P_Entidad)
+        {
+            return _ilogica.EliminarAppointments(P_Entidad);
+        }
+
+        [HttpGet]
+        [Route(nameof(ConsultarAppointments))]
+        public IEnumerable<Appointments> ConsultarAppointments()
+        {
+            Appointments u = new Appointments();
+            return _ilogica.ConsultarAppointments(u).ToList();
+        }
+        #endregion
 
 
-        #endregion 
+
+        #endregion
 
     }
 }

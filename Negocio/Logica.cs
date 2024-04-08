@@ -20,9 +20,11 @@ namespace Negocio
             _iaccesomongbd = P_IAccesomongobd;
         }
 
-        #endregion 
+        #endregion
 
-        #region Metodos Usuarios
+        #region Metodos
+
+        #region Usuarios
         public bool AgregarUsuario(Usuarios P_Entidad)
         {
             return _iaccesomongbd.AgregarUsuario(P_Entidad);
@@ -39,6 +41,28 @@ namespace Negocio
         {
             return _iaccesomongbd.ModificarUsuario(P_Entidad);
         }
+        #endregion
+
+        #region Appointments
+        public bool AgregarAppointments(Appointments P_Entidad)
+        {
+            return _iaccesomongbd.AgregarAppointments(P_Entidad);
+        }
+        public List<Appointments> ConsultarAppointments(Appointments P_Entidad)
+        {
+            return _iaccesomongbd.ConsultarAppointments(P_Entidad);
+        }
+        public bool EliminarAppointments(Appointments P_Entidad)
+        {
+            return _iaccesomongbd.EliminarAppointments(P_Entidad);
+        }
+        public bool ModificarAppointments(Appointments P_Entidad)
+        {
+            return _iaccesomongbd.ModificarAppointments(P_Entidad);
+        }
+        #endregion
+
+
         #endregion
     }
 }
