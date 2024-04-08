@@ -10,6 +10,8 @@ namespace Entidades
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+        [BsonElement("IdUsuario")]
+        public int IdUsuario { get; set; }
         [BsonElement("NombreUsuario")]
         public string NombreUsuario { get; set; }
         [BsonElement("Clave")]
