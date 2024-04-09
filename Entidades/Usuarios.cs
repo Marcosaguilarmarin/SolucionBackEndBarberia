@@ -28,6 +28,7 @@ namespace Entidades
         public Usuarios()
         {
             Id = string.Empty;
+            IdUsuario = 0;
             NombreUsuario = string.Empty;
             Clave = string.Empty;
             Estado = true;
