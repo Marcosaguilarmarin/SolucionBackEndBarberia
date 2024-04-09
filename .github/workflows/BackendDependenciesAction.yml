@@ -1,0 +1,33 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "NewBranch" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Restore dependencies
+      run: dotnet nuget locals all --clear
+
+    - name: Update NuGet packages For Entidades
+      run: dotnet outdated -u -p ..\Entidades\Entidades.csproj
+      
+    - name: Update NuGet packages For AccesoDatos
+      run: dotnet outdated -u -p ..\AccesoDatos\AccesoDatos.csproj
+    
+    #- name: Build
+     # run: dotnet build --configuration Release
+    #- name: Test
+     # run: dotnet test --no-build --verbosity normal
