@@ -21,11 +21,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet nuget locals all --clear
 
-    - name: Update NuGet packages For Entidades
-      run: dotnet outdated -u -p ..\Entidades\Entidades.csproj
-      
-    - name: Update NuGet packages For AccesoDatos
-      run: dotnet outdated -u -p ..\AccesoDatos\AccesoDatos.csproj
+    - name: Install MongoDB.Bson, MongoDB.Driver, MongoDB.Driver.Core
+      run: |
+        dotnet add package MongoDB.Bson --version 2.12.3
+        dotnet add package MongoDB.Driver --version 2.12.3
+        dotnet add package MongoDB.Driver.Core --version 2.12.3
+
+    - name: Build
+      run: dotnet build --configuration Release
     
     #- name: Build
      # run: dotnet build --configuration Release
