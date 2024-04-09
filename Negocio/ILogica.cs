@@ -20,5 +20,13 @@ namespace Negocio
 
         #endregion
 
+
+        #region Clients
+        bool AgregarClients(Clients P_Entidad);
+        bool ModificarClients(Clients P_Entidad);
+        bool EliminarClients(Clients P_Entidad);
+        List<Clients> ConsultarClients(Clients P_Entidad);
+        #endregion
+
     }
 }

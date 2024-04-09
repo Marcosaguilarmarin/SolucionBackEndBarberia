@@ -62,6 +62,25 @@ namespace Negocio
         }
         #endregion
 
+        #region Clients
+        public bool AgregarClients(Clients P_Entidad)
+        {
+            return _iaccesomongbd.AgregarClients(P_Entidad);
+        }
+        public List<Clients> ConsultarClients(Clients P_Entidad)
+        {
+            return _iaccesomongbd.ConsultarClients(P_Entidad);
+        }
+        public bool EliminarClients(Clients P_Entidad)
+        {
+            return _iaccesomongbd.EliminarClients(P_Entidad);
+        }
+        public bool ModificarClients(Clients P_Entidad)
+        {
+            return _iaccesomongbd.ModificarClients(P_Entidad);
+        }
+        #endregion
+
 
         #endregion
     }

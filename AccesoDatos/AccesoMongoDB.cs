@@ -191,6 +191,70 @@ namespace AccesoDatos
 
 
         #endregion
+        #region Clients
+        /// <summary>
+        /// Metodo para agregar Clients
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Clients</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool AgregarClients(Clients P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Clients>("Clients");
+            Coleccion.InsertOne(P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para modificar Clients
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Clients</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool ModificarClients(Clients P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Clients>("Clients");
+            Coleccion.ReplaceOne(d => d.Id == P_Entidad.Id, P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para eliminar Clients
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Clients</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool EliminarClients(Clients P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Clients>("Clients");
+            Coleccion.DeleteOne(d => d.Id == P_Entidad.Id);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para consultar Clients de base de datos
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Clients</param>
+        /// <returns>Entidad lista de tipo Clients</returns>
+        public List<Clients> ConsultarClients(Clients P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Clients>("Clients");
+            if (P_Entidad != null)
+                if (!string.IsNullOrEmpty(P_Entidad.Id))
+                    return Coleccion.Find(d => d.Id == P_Entidad.Id).ToList();
+                else
+                    return Coleccion.Find(d => true).ToList();
+            else
+                return Coleccion.Find(d => true).ToList();
+        }
+
+
+        #endregion
 
 
         #endregion

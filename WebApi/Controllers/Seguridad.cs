@@ -98,6 +98,38 @@ namespace WebApi.Controllers
         }
         #endregion
 
+        #region Clients
+        [HttpPost]
+        [Route(nameof(AgregarClients))]
+        public bool AgregarClients(Clients P_Entidad)
+        {
+            return _ilogica.AgregarClients(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(ModificarClients))]
+        public bool ModificarClients(Clients P_Entidad)
+        {
+            return _ilogica.ModificarClients(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(EliminarClients))]
+        public bool EliminarClients(Clients P_Entidad)
+        {
+            return _ilogica.EliminarClients(P_Entidad);
+        }
+
+        [HttpGet]
+        [Route(nameof(ConsultarClients))]
+        public IEnumerable<Clients> ConsultarClients()
+        {
+            Clients u = new Clients();
+            return _ilogica.ConsultarClients(u).ToList();
+        }
+        #endregion
+
+
 
 
         #endregion
