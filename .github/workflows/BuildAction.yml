@@ -5,7 +5,7 @@ name: .NET
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "NewBranch" ]
 
 jobs:
   build:
@@ -20,6 +20,15 @@ jobs:
         dotnet-version: '3.1.x'
     - name: Restore dependencies
       run: dotnet restore
+
+    - name: Restore dependencies
+      run: dotnet nuget locals all --clear
+
+    - name: Update NuGet packages For Entidades
+      run: dotnet outdated -u -p ..\Entidades\Entidades.csproj
+      
+    - name: Update NuGet packages For AccesoDatos
+      run: dotnet outdated -u -p ..\AccesoDatos\AccesoDatos.csproj
     
     #- name: Build
      # run: dotnet build --configuration Release
