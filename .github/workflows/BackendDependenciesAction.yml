@@ -21,12 +21,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet nuget locals all --clear
 
-    - name: Install MongoDB.Bson, MongoDB.Driver, MongoDB.Driver.Core
-      run: |
-        dotnet add package MongoDB.Bson --version 2.12.3
-        dotnet add package MongoDB.Driver --version 2.12.3
-        dotnet add package MongoDB.Driver.Core --version 2.12.3
-
     - name: Build
       run: dotnet build --configuration Release
     
