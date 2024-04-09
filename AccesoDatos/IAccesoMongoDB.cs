@@ -28,5 +28,22 @@ namespace AccesoDatos
         List<Clients> ConsultarClients(Clients P_Entidad);
         #endregion
 
+        #region Services
+        bool AgregarServices(Services P_Entidad);
+        bool ModificarServices(Services P_Entidad);
+        bool EliminarServices(Services P_Entidad);
+
+        List<Services> ConsultarServices(Services P_Entidad);
+
+        #endregion
+
+        #region Services_Categories
+        bool AgregarServices_Categories(Services_Categories P_Entidad);
+        bool ModificarServices_Categories(Services_Categories P_Entidad);
+        bool EliminarServices_Categories(Services_Categories P_Entidad);
+
+        List<Services_Categories> ConsultarServices_Categories(Services_Categories P_Entidad);
+        #endregion
+
     }
 }

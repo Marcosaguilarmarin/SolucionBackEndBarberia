@@ -129,6 +129,72 @@ namespace WebApi.Controllers
         }
         #endregion
 
+        #region Services 
+
+        [HttpPost]
+        [Route(nameof(AgregarServices))]
+        public bool AgregarServices(Services P_Entidad)
+        {
+            return _ilogica.AgregarServices(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(ModificarServices))]
+        public bool ModificarServices(Services P_Entidad)
+        {
+            return _ilogica.ModificarServices(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(EliminarServices))]
+        public bool EliminarServices(Services P_Entidad)
+        {
+            return _ilogica.EliminarServices(P_Entidad);
+        }
+
+        [HttpGet]
+        [Route(nameof(ConsultarServices))]
+        public IEnumerable<Services> ConsultarServices()
+        {
+            Services u = new Services();
+            return _ilogica.ConsultarServices(u).ToList();
+        }
+
+        #endregion
+
+        #region Services_Categories
+
+        [HttpPost]
+        [Route(nameof(AgregarServices_Categories))]
+        public bool AgregarServices_Categories(Services_Categories P_Entidad)
+        {
+            return _ilogica.AgregarServices_Categories(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(ModificarServices_Categories))]
+        public bool ModificarServices_Categories(Services_Categories P_Entidad)
+        {
+            return _ilogica.ModificarServices_Categories(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(EliminarServices_Categories))]
+        public bool EliminarServices_Categories(Services_Categories P_Entidad)
+        {
+            return _ilogica.EliminarServices_Categories(P_Entidad);
+        }
+
+        [HttpGet]
+        [Route(nameof(ConsultarServices_Categories))]
+        public IEnumerable<Services_Categories> ConsultarServices_Categories()
+        {
+            Services_Categories u = new Services_Categories();
+            return _ilogica.ConsultarServices_Categories(u).ToList();
+        }
+
+        #endregion
+
 
 
 

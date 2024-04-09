@@ -81,6 +81,45 @@ namespace Negocio
         }
         #endregion
 
+        #region Services
+
+        public bool AgregarServices(Services P_Entidad)
+        {
+            return _iaccesomongbd.AgregarServices(P_Entidad);
+        }
+        public List<Services> ConsultarServices(Services P_Entidad)
+        {
+            return _iaccesomongbd.ConsultarServices(P_Entidad);
+        }
+        public bool EliminarServices(Services P_Entidad)
+        {
+            return _iaccesomongbd.EliminarServices(P_Entidad);
+        }
+        public bool ModificarServices(Services P_Entidad)
+        {
+            return _iaccesomongbd.ModificarServices(P_Entidad);
+        }
+
+        #endregion
+
+        #region Services_Categories
+        public bool AgregarServices_Categories (Services_Categories P_Entidad) 
+        {
+            return _iaccesomongbd.AgregarServices_Categories(P_Entidad);        
+        }
+        public List<Services_Categories> ConsultarServices_Categories (Services_Categories P_Entidad)
+        {
+            return _iaccesomongbd.ConsultarServices_Categories(P_Entidad);
+        }
+        public bool EliminarServices_Categories (Services_Categories P_Entidad)
+        {
+            return _iaccesomongbd.EliminarServices_Categories(P_Entidad);
+        }
+        public bool ModificarServices_Categories (Services_Categories P_Entidad)
+        {
+            return _iaccesomongbd.ModificarServices_Categories(P_Entidad);
+        }
+        #endregion
 
         #endregion
     }

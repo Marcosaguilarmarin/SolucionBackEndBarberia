@@ -256,7 +256,135 @@ namespace AccesoDatos
 
         #endregion
 
+        #region Services
 
+        /// <summary>
+        /// Metodo para agregar Services
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool AgregarServices(Services P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services>("Services");
+            Coleccion.InsertOne(P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para modificar Services
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool ModificarServices(Services P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services>("Services");
+            Coleccion.ReplaceOne(d => d.Id == P_Entidad.Id, P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para eliminar Services
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool EliminarServices(Services P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services>("Services");
+            Coleccion.DeleteOne(d => d.Id == P_Entidad.Id);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para consultar Services de base de datos
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services</param>
+        /// <returns>Entidad lista de tipo Services</returns>
+        public List<Services> ConsultarServices(Services P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services>("Services");
+            if (P_Entidad != null)
+                if (!string.IsNullOrEmpty(P_Entidad.Id))
+                    return Coleccion.Find(d => d.Id == P_Entidad.Id).ToList();
+                else
+                    return Coleccion.Find(d => true).ToList();
+            else
+                return Coleccion.Find(d => true).ToList();
+        }
+
+        #endregion
+
+        #region Services_Categories
+
+        /// <summary>
+        /// Metodo para agregar Services_Categories
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services_Categories</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool AgregarServices_Categories(Services_Categories P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services_Categories>("Services_Categories");
+            Coleccion.InsertOne(P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para modificar Services_Categories
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services_Categories</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool ModificarServices_Categories(Services_Categories P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services_Categories>("Services_Categories");
+            Coleccion.ReplaceOne(d => d.Id == P_Entidad.Id, P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para eliminar Services_Categories
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services_Categories</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool EliminarServices_Categories(Services_Categories P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services_Categories>("Services_Categories");
+            Coleccion.DeleteOne(d => d.Id == P_Entidad.Id);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para consultar Services de base de datos
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services_Categories</param>
+        /// <returns>Entidad lista de tipo Services_Categories</returns>
+        public List<Services_Categories> ConsultarServices_Categories(Services_Categories P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services_Categories>("Services_Categories");
+            if (P_Entidad != null)
+                if (!string.IsNullOrEmpty(P_Entidad.Id))
+                    return Coleccion.Find(d => d.Id == P_Entidad.Id).ToList();
+                else
+                    return Coleccion.Find(d => true).ToList();
+            else
+                return Coleccion.Find(d => true).ToList();
+        }
+
+        #endregion
         #endregion
 
         #endregion
