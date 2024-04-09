@@ -1,0 +1,1 @@
+[![.NET](https://github.com/Marcosaguilarmarin/SolucionBackEndBarberia/actions/workflows/BackendDependenciesAction.yml/badge.svg?branch=NewBranch&event=push)](https://github.com/Marcosaguilarmarin/SolucionBackEndBarberia/actions/workflows/BackendDependenciesAction.yml)
