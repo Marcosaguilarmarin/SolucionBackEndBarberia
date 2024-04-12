@@ -387,6 +387,136 @@ namespace AccesoDatos
         #endregion
         #endregion
 
+        #region Employees
+        /// <summary>
+        /// Metodo para agregar Employees
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Employees</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool AgregarEmployees(Employees P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Employees>("Employees");
+            Coleccion.InsertOne(P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para modificar Employees
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Employees</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool ModificarEmployees(Employees P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Employees>("Employees");
+            Coleccion.ReplaceOne(d => d.Id == P_Entidad.Id, P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para eliminar Employees
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Employees</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool EliminarEmployees(Employees P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Employees>("Employees");
+            Coleccion.DeleteOne(d => d.Id == P_Entidad.Id);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para consultar Services de base de datos
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services_Categories</param>
+        /// <returns>Entidad lista de tipo Services_Categories</returns>
+        public List<Employees> ConsultarEmployees(Employees P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Employees>("Employees");
+            if (P_Entidad != null)
+                if (!string.IsNullOrEmpty(P_Entidad.Id))
+                    return Coleccion.Find(d => d.Id == P_Entidad.Id).ToList();
+                else
+                    return Coleccion.Find(d => true).ToList();
+            else
+                return Coleccion.Find(d => true).ToList();
+        }
+
+
+        #endregion
+
+        #region Employees_Schedule
+
+        /// <summary>
+        /// Metodo para agregar Employees_Schedule
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Employees_Schedule</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool AgregarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Employees_Schedule>("Employees_Schedule");
+            Coleccion.InsertOne(P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para modificar Employees_Schedule
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Employees_Schedule</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool ModificarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Employees_Schedule>("Employees_Schedule");
+            Coleccion.ReplaceOne(d => d.Id == P_Entidad.Id, P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para eliminar Employees
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Employees</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool EliminarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Employees_Schedule>("Employees_Schedule");
+            Coleccion.DeleteOne(d => d.Id == P_Entidad.Id);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para consultar Services de base de datos
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services_Categories</param>
+        /// <returns>Entidad lista de tipo Services_Categories</returns>
+        public List<Employees_Schedule> ConsultarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Employees_Schedule>("Employees_Schedule");
+            if (P_Entidad != null)
+                if (!string.IsNullOrEmpty(P_Entidad.Id))
+                    return Coleccion.Find(d => d.Id == P_Entidad.Id).ToList();
+                else
+                    return Coleccion.Find(d => true).ToList();
+            else
+                return Coleccion.Find(d => true).ToList();
+        }
+
+        #endregion
+
         #endregion
 
     }

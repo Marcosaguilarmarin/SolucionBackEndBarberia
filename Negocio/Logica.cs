@@ -120,7 +120,45 @@ namespace Negocio
             return _iaccesomongbd.ModificarServices_Categories(P_Entidad);
         }
         #endregion
+        #region Employees
+        public bool AgregarEmployees(Employees P_Entidad)
+        {
+            return _iaccesomongbd.AgregarEmployees(P_Entidad);
+        }
+        public List<Employees> ConsultarEmployees (Employees P_Entidad)
+        {
+            return _iaccesomongbd.ConsultarEmployees(P_Entidad);
+        }
+        public bool EliminarEmployees (Employees P_Entidad)
+        {
+            return _iaccesomongbd.EliminarEmployees(P_Entidad);
+        }
+        public bool ModificarEmployees (Employees P_Entidad)
+        {
+            return _iaccesomongbd.ModificarEmployees(P_Entidad);
+        }
+        #endregion
 
+        #region Employees_Schedule
+
+        public bool AgregarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            return _iaccesomongbd.AgregarEmployees_Schedule(P_Entidad);
+        }
+        public List<Employees_Schedule> ConsultarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            return _iaccesomongbd.ConsultarEmployees_Schedule(P_Entidad);
+        }
+        public bool EliminarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            return _iaccesomongbd.EliminarEmployees_Schedule(P_Entidad);
+        }
+        public bool ModificarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            return _iaccesomongbd.ModificarEmployees_Schedule(P_Entidad);
+        }
+
+        #endregion
         #endregion
     }
 }

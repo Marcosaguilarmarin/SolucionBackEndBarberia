@@ -45,5 +45,20 @@ namespace Negocio
         List<Services_Categories> ConsultarServices_Categories(Services_Categories P_Entidad);
         #endregion
 
+        #region Employees
+        bool AgregarEmployees(Employees P_Entidad);
+        bool ModificarEmployees(Employees P_Entidad);
+        bool EliminarEmployees(Employees P_Entidad);
+
+        List<Employees> ConsultarEmployees(Employees P_Entidad);
+        #endregion
+        #region Employees_Schedule
+        bool AgregarEmployees_Schedule(Employees_Schedule P_Entidad);
+        bool ModificarEmployees_Schedule(Employees_Schedule P_Entidad);
+        bool EliminarEmployees_Schedule(Employees_Schedule P_Entidad);
+
+        List<Employees_Schedule> ConsultarEmployees_Schedule(Employees_Schedule P_Entidad);
+        #endregion
+
     }
 }

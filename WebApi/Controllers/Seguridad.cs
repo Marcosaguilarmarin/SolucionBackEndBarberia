@@ -195,6 +195,70 @@ namespace WebApi.Controllers
 
         #endregion
 
+        #region Employees
+        [HttpPost]
+        [Route(nameof(AgregarEmployees))]
+        public bool AgregarEmployees(Employees P_Entidad)
+        {
+            return _ilogica.AgregarEmployees(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(ModificarEmployees))]
+        public bool ModificarEmployees(Employees P_Entidad)
+        {
+            return _ilogica.ModificarEmployees(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(EliminarEmployees))]
+        public bool EliminarEmployees(Employees P_Entidad)
+        {
+            return _ilogica.EliminarEmployees(P_Entidad);
+        }
+
+        [HttpGet]
+        [Route(nameof(ConsultarEmployees))]
+        public IEnumerable<Employees> ConsultarEmployees()
+        {
+            Employees u = new Employees();
+            return _ilogica.ConsultarEmployees(u).ToList();
+        }
+
+        #endregion
+        #region Employees_Schedule
+
+        [HttpPost]
+        [Route(nameof(AgregarEmployees_Schedule))]
+        public bool AgregarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            return _ilogica.AgregarEmployees_Schedule(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(ModificarEmployees_Schedule))]
+        public bool ModificarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            return _ilogica.ModificarEmployees_Schedule(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(EliminarEmployees_Schedule))]
+        public bool EliminarEmployees_Schedule(Employees_Schedule P_Entidad)
+        {
+            return _ilogica.EliminarEmployees_Schedule(P_Entidad);
+        }
+
+        [HttpGet]
+        [Route(nameof(ConsultarEmployees_Schedule))]
+        public IEnumerable<Employees_Schedule> ConsultarEmployees_Schedule()
+        {
+            Employees_Schedule u = new Employees_Schedule();
+            return _ilogica.ConsultarEmployees_Schedule(u).ToList();
+        }
+
+        #endregion
+
 
 
 
