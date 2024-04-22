@@ -59,5 +59,26 @@ namespace AccesoDatos
         List<Employees_Schedule> ConsultarEmployees_Schedule(Employees_Schedule P_Entidad);
         #endregion
 
+        #region PerfilesXusuarios
+        bool AgregarPerfilesXusuarios(PerfilesXusuarios P_Entidad);
+        bool ModificarPerfilesXusuarios(PerfilesXusuarios P_Entidad);
+        bool EliminarPerfilesXusuarios(PerfilesXusuarios P_Entidad);
+        List<PerfilesXusuarios> ConsultarPerfilesXusuarios(PerfilesXusuarios P_Entidad);
+        #endregion
+
+        #region Perfiles
+        bool AgregarPerfiles(Perfiles P_Entidad);
+        bool ModificarPerfiles(Perfiles P_Entidad);
+        bool EliminarPerfiles(Perfiles P_Entidad);
+        List<Perfiles> ConsultarPerfiles(Perfiles P_Entidad);
+        #endregion
+
+        #region Services_Booked
+        bool AgregarServices_Booked(Services_Booked P_Entidad);
+        bool ModificarServices_Booked(Services_Booked P_Entidad);
+        bool EliminarServices_Booked(Services_Booked P_Entidad);
+        List<Services_Booked> ConsultarServices_Booked(Services_Booked P_Entidad);
+        #endregion
+
     }
 }

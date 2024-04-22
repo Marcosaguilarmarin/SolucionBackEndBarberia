@@ -385,7 +385,6 @@ namespace AccesoDatos
         }
 
         #endregion
-        #endregion
 
         #region Employees
         /// <summary>
@@ -515,7 +514,202 @@ namespace AccesoDatos
                 return Coleccion.Find(d => true).ToList();
         }
 
+        #endregion.
+
+        #region PerfilesXusuarios
+
+        /// <summary>
+        /// Metodo para agregar PerfilesXusuarios
+        /// </summary>
+        /// <param name="P_Entidad">Entidad PerfilesXusuarios</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool AgregarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<PerfilesXusuarios>("PerfilesXusuarios");
+            Coleccion.InsertOne(P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para modificar PerfilesXusuarios
+        /// </summary>
+        /// <param name="P_Entidad">Entidad PerfilesXusuarios</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool ModificarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<PerfilesXusuarios>("PerfilesXusuarios");
+            Coleccion.ReplaceOne(d => d.Id == P_Entidad.Id, P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para eliminar PerfilesXusuarios
+        /// </summary>
+        /// <param name="P_Entidad">Entidad PerfilesXusuarios</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool EliminarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<PerfilesXusuarios>("PerfilesXusuarios");
+            Coleccion.DeleteOne(d => d.Id == P_Entidad.Id);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para consultar PerfilesXusuarios de base de datos
+        /// </summary>
+        /// <param name="P_Entidad">Entidad PerfilesXusuarios</param>
+        /// <returns>Entidad lista de tipo PerfilesXusuarios</returns>
+        public List<PerfilesXusuarios> ConsultarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<PerfilesXusuarios>("PerfilesXusuarios");
+            if (P_Entidad != null)
+                if (!string.IsNullOrEmpty(P_Entidad.Id))
+                    return Coleccion.Find(d => d.Id == P_Entidad.Id).ToList();
+                else
+                    return Coleccion.Find(d => true).ToList();
+            else
+                return Coleccion.Find(d => true).ToList();
+        }
         #endregion
+
+        #region Perfiles
+
+        /// <summary>
+        /// Metodo para agregar Perfiles
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Perfiles</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool AgregarPerfiles(Perfiles P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Perfiles>("Perfiles");
+            Coleccion.InsertOne(P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para modificar Perfiles
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Perfiles</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool ModificarPerfiles(Perfiles P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Perfiles>("Perfiles");
+            Coleccion.ReplaceOne(d => d.Id == P_Entidad.Id, P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para eliminar Perfiles
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Perfiles</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool EliminarPerfiles(Perfiles P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Perfiles>("Perfiles");
+            Coleccion.DeleteOne(d => d.Id == P_Entidad.Id);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para consultar Perfiles de base de datos
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Perfiles</param>
+        /// <returns>Entidad lista de tipo Perfiles</returns>
+        public List<Perfiles> ConsultarPerfiles(Perfiles P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Perfiles>("Perfiles");
+            if (P_Entidad != null)
+                if (!string.IsNullOrEmpty(P_Entidad.Id))
+                    return Coleccion.Find(d => d.Id == P_Entidad.Id).ToList();
+                else
+                    return Coleccion.Find(d => true).ToList();
+            else
+                return Coleccion.Find(d => true).ToList();
+        }
+        #endregion
+
+        #region Services_Booked
+
+        /// <summary>
+        /// Metodo para agregar Services_Booked
+        /// </summary>
+        /// <param name="P_Entidad">Entidad usuario</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool AgregarServices_Booked(Services_Booked P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services_Booked>("Services_Booked");
+            Coleccion.InsertOne(P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para modificar Services_Booked
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services_Booked</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool ModificarServices_Booked(Services_Booked P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services_Booked>("Services_Booked");
+            Coleccion.ReplaceOne(d => d.Id == P_Entidad.Id, P_Entidad);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para eliminar Services_Booked
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services_Booked</param>
+        /// <returns>Resultado de la operacion</returns>
+        public bool EliminarServices_Booked(Services_Booked P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services_Booked>("Services_Booked");
+            Coleccion.DeleteOne(d => d.Id == P_Entidad.Id);
+            LimpiarAtributosGlobales();
+            return true;
+        }
+        /// <summary>
+        /// Metodo para consultar Services_Booked de base de datos
+        /// </summary>
+        /// <param name="P_Entidad">Entidad Services_Booked</param>
+        /// <returns>Entidad lista de tipo Services_Booked</returns>
+        public List<Services_Booked> ConsultarServices_Booked(Services_Booked P_Entidad)
+        {
+            ObtenerConexion();
+
+            var Coleccion = BaseDatos.GetCollection<Services_Booked>("Services_Booked");
+            if (P_Entidad != null)
+                if (!string.IsNullOrEmpty(P_Entidad.Id))
+                    return Coleccion.Find(d => d.Id == P_Entidad.Id).ToList();
+                else
+                    return Coleccion.Find(d => true).ToList();
+            else
+                return Coleccion.Find(d => true).ToList();
+        }
+        #endregion
+
+        #endregion
+
 
         #endregion
 

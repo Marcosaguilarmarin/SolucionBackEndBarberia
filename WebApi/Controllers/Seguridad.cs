@@ -226,6 +226,7 @@ namespace WebApi.Controllers
         }
 
         #endregion
+
         #region Employees_Schedule
 
         [HttpPost]
@@ -258,6 +259,102 @@ namespace WebApi.Controllers
         }
 
         #endregion
+
+        #region PerfilesXusuarios
+        [HttpPost]
+        [Route(nameof(AgregarPerfilesXusuarios))]
+        public bool AgregarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            return _ilogica.AgregarPerfilesXusuarios(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(ModificarPerfilesXusuarios))]
+        public bool ModificarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            return _ilogica.ModificarPerfilesXusuarios(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(EliminarPerfilesXusuarios))]
+        public bool EliminarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            return _ilogica.EliminarPerfilesXusuarios(P_Entidad);
+        }
+
+        [HttpGet]
+        [Route(nameof(ConsultarPerfilesXusuarios))]
+        public IEnumerable<PerfilesXusuarios> ConsultarPerfilesXusuarios()
+        {
+            PerfilesXusuarios u = new PerfilesXusuarios();
+            return _ilogica.ConsultarPerfilesXusuarios(u).ToList();
+        }
+        #endregion
+
+        #region Perfiles
+        [HttpPost]
+        [Route(nameof(AgregarPerfiles))]
+        public bool AgregarPerfiles(Perfiles P_Entidad)
+        {
+            return _ilogica.AgregarPerfiles(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(ModificarPerfiles))]
+        public bool ModificarPerfiles(Perfiles P_Entidad)
+        {
+            return _ilogica.ModificarPerfiles(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(EliminarPerfiles))]
+        public bool EliminarPerfiles(Perfiles P_Entidad)
+        {
+            return _ilogica.EliminarPerfiles(P_Entidad);
+        }
+
+        [HttpGet]
+        [Route(nameof(ConsultarPerfiles))]
+        public IEnumerable<Perfiles> ConsultarPerfiles()
+        {
+            Perfiles u = new Perfiles();
+            return _ilogica.ConsultarPerfiles(u).ToList();
+        }
+        #endregion
+
+        #region Services_Booked
+        [HttpPost]
+        [Route(nameof(AgregarServices_Booked))]
+        public bool AgregarServices_Booked(Services_Booked P_Entidad)
+        {
+            return _ilogica.AgregarServices_Booked(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(ModificarServices_Booked))]
+        public bool ModificarServices_Booked(Services_Booked P_Entidad)
+        {
+            return _ilogica.ModificarServices_Booked(P_Entidad);
+        }
+
+        [HttpPost]
+        [Route(nameof(EliminarServices_Booked))]
+        public bool EliminarServices_Booked(Services_Booked P_Entidad)
+        {
+            return _ilogica.EliminarServices_Booked(P_Entidad);
+        }
+
+        [HttpGet]
+        [Route(nameof(ConsultarServices_Booked))]
+        public IEnumerable<Services_Booked> ConsultarServices_Booked()
+        {
+            Services_Booked u = new Services_Booked();
+            return _ilogica.ConsultarServices_Booked(u).ToList();
+        }
+        #endregion
+
+
+
 
 
 

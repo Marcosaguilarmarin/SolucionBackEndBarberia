@@ -120,6 +120,7 @@ namespace Negocio
             return _iaccesomongbd.ModificarServices_Categories(P_Entidad);
         }
         #endregion
+
         #region Employees
         public bool AgregarEmployees(Employees P_Entidad)
         {
@@ -159,6 +160,65 @@ namespace Negocio
         }
 
         #endregion
+
+        #region PerfilesXusuarios
+        public bool AgregarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            return _iaccesomongbd.AgregarPerfilesXusuarios(P_Entidad);
+        }
+        public List<PerfilesXusuarios> ConsultarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            return _iaccesomongbd.ConsultarPerfilesXusuarios(P_Entidad);
+        }
+        public bool EliminarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            return _iaccesomongbd.EliminarPerfilesXusuarios(P_Entidad);
+        }
+        public bool ModificarPerfilesXusuarios(PerfilesXusuarios P_Entidad)
+        {
+            return _iaccesomongbd.ModificarPerfilesXusuarios(P_Entidad);
+        }
+        #endregion
+
+        #region Perfiles
+        public bool AgregarPerfiles(Perfiles P_Entidad)
+        {
+            return _iaccesomongbd.AgregarPerfiles(P_Entidad);
+        }
+        public List<Perfiles> ConsultarPerfiles(Perfiles P_Entidad)
+        {
+            return _iaccesomongbd.ConsultarPerfiles(P_Entidad);
+        }
+        public bool EliminarPerfiles(Perfiles P_Entidad)
+        {
+            return _iaccesomongbd.EliminarPerfiles(P_Entidad);
+        }
+        public bool ModificarPerfiles(Perfiles P_Entidad)
+        {
+            return _iaccesomongbd.ModificarPerfiles(P_Entidad);
+        }
+        #endregion
+
+        #region Services_Booked
+        public bool AgregarServices_Booked(Services_Booked P_Entidad)
+        {
+            return _iaccesomongbd.AgregarServices_Booked(P_Entidad);
+        }
+        public List<Services_Booked> ConsultarServices_Booked(Services_Booked P_Entidad)
+        {
+            return _iaccesomongbd.ConsultarServices_Booked(P_Entidad);
+        }
+        public bool EliminarServices_Booked(Services_Booked P_Entidad)
+        {
+            return _iaccesomongbd.EliminarServices_Booked(P_Entidad);
+        }
+        public bool ModificarServices_Booked(Services_Booked P_Entidad)
+        {
+            return _iaccesomongbd.ModificarServices_Booked(P_Entidad);
+        }
+        #endregion
+
+
         #endregion
     }
 }
