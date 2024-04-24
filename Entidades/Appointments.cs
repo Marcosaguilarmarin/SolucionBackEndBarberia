@@ -25,7 +25,7 @@ namespace Entidades
         [BsonElement("end_time_expected")]
         public DateTime end_time_expected { get; set; }
         [BsonElement("canceled")]
-        public int canceled { get; set; }
+        public Boolean canceled { get; set; }
         [BsonElement("cancellation_reason")]
         public string cancellation_reason { get; set; }
 
@@ -44,7 +44,7 @@ namespace Entidades
             employee_id = 0;
             start_time = DateTime.MinValue;
             end_time_expected = DateTime.MinValue;
-            canceled = 0;
+            canceled = true;
             cancellation_reason = string.Empty;
         }
         #endregion
