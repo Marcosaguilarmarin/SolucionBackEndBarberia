@@ -39,6 +39,7 @@ namespace Entidades
         {
             Id = string.Empty;
             appointment_id = 0;
+            date_created = DateTime.MinValue;
             client_id = 0;
             employee_id = 0;
             start_time = DateTime.MinValue;
